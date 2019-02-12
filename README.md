@@ -1,4 +1,4 @@
-#FileSizeDisplay
+# FileSizeDisplay
 
 This is a simple class to convert bytes to the mostly logical human readable size.
 
@@ -16,5 +16,5 @@ This is a simple class to convert bytes to the mostly logical human readable siz
 
 ```
 
-###Bugs
+### Bugs:
 - if the `output` kwarg is used, and the logical display output is smaller than the desired output, it will not show the desiered unit, but the logical one. 
