@@ -18,6 +18,7 @@ class FileSizeDisplay:
         ]
 
         self.display_num = self._number
+        self.raw_display_num = self._number
 
         self.display_unit = 'B'
         if not short:
@@ -26,7 +27,19 @@ class FileSizeDisplay:
         self.convert()
 
     def __str__(self):
-        return '{} {}'.format(self.display_num, self.display_unit)
+        num = self.format_raw_display()
+        return '{} {}'.format(num, self.display_unit)
+
+    def format_raw_display(self):
+
+        rv = round(self.raw_display_num, self.decimal)
+
+        if not (self.raw_display_num % 1):
+            rv = int(self.raw_display_num)
+
+
+
+        return rv
 
     def convert(self):
 
@@ -48,6 +61,7 @@ class FileSizeDisplay:
 
             _iter += 1
 
-        self.display_num = round(_display_num, self.decimal)
+        self.raw_display_num = _display_num
 
-print(FileSizeDisplay(3569581187, short=False, output='MB'))
+
+print(FileSizeDisplay(1001, short=False, output='MB'))
