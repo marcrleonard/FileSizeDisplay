@@ -50,4 +50,4 @@ class FileSizeDisplay:
 
         self.display_num = round(_display_num, self.decimal)
 
-print(FileSizeDisplay(987899))
+print(FileSizeDisplay(3569581187, short=False, output='MB'))
